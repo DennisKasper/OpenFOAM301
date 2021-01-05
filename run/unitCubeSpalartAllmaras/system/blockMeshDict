@@ -1,0 +1,94 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     3.1                                |
+|   \\  /    A nd           | Web:         http://www.extend-project.de       |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 1.0;	// scaling factor for each vertex
+
+vertices							// keyword
+(
+    // Unit cube
+    (0 0 0)	// vertex number 0
+    (1 0 0)	// vertex number 1
+    (1 1 0)	// vertex number 2
+    (0 1 0)	// vertex number 3
+    (0 0 1)	// vertex number 4
+    (1 0 1)	// vertex number 5
+    (1 1 1)	// vertex number 6
+    (0 1 1)	// vertex number 7
+);
+
+blocks	// keyword
+(
+    hex (0 1 2 3 4 5 6 7)	// vertex numbers
+    // Coarse mesh
+    //(2 2 2)
+    (4 4 4) 			// numbers of cells in each direction
+    // Intermediate mesh
+    //(8 8 8) 			// numbers of cells in each direction
+    // Fine mesh
+    //(100 100 100) 			// numbers of cells in each direction
+    simpleGrading (1 1 1)	// cell expansion ratios
+);
+
+/*edges	// keyword
+(
+);*/
+
+boundary	// keyword
+(
+    inlet				// patch (region) name (user defined) for patch 0 (has to be consitent with the initial field variables)
+    {
+        type patch;		// patch type for patch 0
+        faces
+        (
+            (0 4 7 3)	// block faces in this patch
+        );
+    }					// end of patch 0
+
+    outlet
+    {
+        type patch;
+        faces
+        (
+            (2 6 5 1)
+        );
+    }
+
+    wall
+    {
+        type wall;
+        faces
+        (
+            (1 5 4 0) 
+            (3 7 6 2)
+            (0 3 2 1)    
+        );
+    }
+    
+    optPatch
+    {
+    	type patch;
+    	faces
+    	(
+            (4 5 6 7)
+        );
+    }
+);
+
+/*mergePatchPairs
+(
+);*/
+
+// ************************************************************************* //

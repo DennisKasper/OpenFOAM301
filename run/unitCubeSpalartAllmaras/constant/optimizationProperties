@@ -1,0 +1,48 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  3.0.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      optimizationProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Optimization patch names
+optimizationPatchNames  (optPatch);  // (patch1 patch2 ...)
+
+// Parameter for step size study
+stepStart               1e-6;
+stepStop                1e-6;
+stepSize                1e+1;
+
+// Analysis for (all selective none) nodes
+adjoint                 selective;
+finiteDifference        selective;
+
+// Select the global IDs
+globalIDsAdj            (106 107 108 111 112 113 116 117 118);
+globalIDsFD             (106 107 108 111 112 113 116 117 118);
+
+// Sultion criteria
+maxItr                  2000;
+eps                     1e-12;
+relaxFac                0.7;
+
+// Case
+caseExample             unitCubeSpalartAllmaras; // unitCubeSpalartAllmaras, airFoil2D, wing3D or channel
+
+// Objective Function
+objectiveFunction       artificial;  // artificial, coupling or force
+
+// Direction of vector
+vector                  (1.0 1.0 0.0);
+
+// ************************************************************************* //
