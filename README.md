@@ -1,12 +1,12 @@
 # Discrete Adjoint Approach to the Spalart-Allmaras Turbulence Model for Incompressible Flow in OpenFOAM
 
-Masterthesis Computational Mechanics program at [Technical University Munich](https://www.bgu.tum.de/come/home/).
+Masterthesis in [Computational Mechanics](https://www.bgu.tum.de/come/home/) at [Technical University Munich](https://www.tum.de/).
 
 All examples have been tested with [OpenFoam-3.0.1](https://openfoam.org/version/3-0-1/) on [Ubuntu 14.04.6 LTS (Trusty Tahr)](https://releases.ubuntu.com/14.04/) . For convenience a docker image and start script is provided.
 
 ## Build Instructions
 
-Docker version 20.10.1
+OS Manjaro Linux, Docker version 20.10.1
 
 Clone this repository an open the root location in a terminal.
 
@@ -27,10 +27,13 @@ Compile the adjoint solver
 ```
 # wmake /home/openfoam/applications/solvers/incompressible/adjointSpalartAllmaras/
 ```
+
 Test the solver
 ```
 # adjointSpalartAllmaras -help
 ```
+
+Expected output
 ```bash
 Usage: adjointSpalartAllmaras [OPTIONS]
 options:
@@ -50,7 +53,7 @@ Build: 3.0.1-119cac7e8750
 
 ## Example
 
-Follow thesis chapter six (p. 25) for the unit cube example.
+Follow [thesis](./thesis/thesis_dennis_kasper.pdf) chapter six (p. 25) for the unit cube example.
 
 In a terminal navigate to `/home/openfoam/run/unitCubeSpalartAllmaras/` and call the solver
 ```
@@ -68,4 +71,5 @@ In a terminal navigate to `/home/openfoam/run/unitCubeSpalartAllmaras/` and call
 -[ ] Add Laplace solver   
 -[ ] Add NACA 2412 Airfoil and ONERA M6 Wing examples  
 -[ ] fix solver/lib output path -> /home/openfoam/ not /root/OpenFOAM/-3.0.1/  
--[ ] fix paraFOAM GUI error   
+-[ ] fix paraFOAM GUI error  
+-[ ] compile solvers in docker build process
