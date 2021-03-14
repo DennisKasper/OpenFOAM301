@@ -68,8 +68,8 @@ In a terminal navigate to `/home/openfoam/run/unitCubeSpalartAllmaras/` and call
 
 ## ToDo
 
--[ ] Add Laplace solver   
--[ ] Add NACA 2412 Airfoil and ONERA M6 Wing examples  
--[ ] fix solver/lib output path -> /home/openfoam/ not /root/OpenFOAM/-3.0.1/  
--[ ] fix paraFOAM GUI error  
--[ ] compile solvers in docker build process
+- [ ] Add NACA 2412 Airfoil and ONERA M6 Wing examples
+- [ ] fix solver/lib output path -> /home/openfoam/ not /root/OpenFOAM/-3.0.1/
+- [ ] fix paraFOAM GUI error
+- [ ] compile solvers in docker build process
+
