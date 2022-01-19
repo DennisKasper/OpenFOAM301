@@ -1,6 +1,6 @@
 # Discrete Adjoint Approach to the Spalart-Allmaras Turbulence Model for Incompressible Flow in OpenFOAM
 
-Masterthesis in [Computational Mechanics](https://www.bgu.tum.de/come/home/) at [Technical University Munich](https://www.tum.de/).
+Masterthesis in [Computational Mechanics](https://www.ed.tum.de/en/ed/studies/degree-program/computational-mechanics-m-sc/) at [Technical University Munich](https://www.tum.de/).
 
 All examples have been tested with [OpenFoam-3.0.1](https://openfoam.org/version/3-0-1/) on [Ubuntu 14.04.6 LTS (Trusty Tahr)](https://releases.ubuntu.com/14.04/) . For convenience a docker image and start script is provided.
 
