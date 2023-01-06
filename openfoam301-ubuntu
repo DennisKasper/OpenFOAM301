@@ -142,10 +142,10 @@ echo "User: \"$(id -un)\" (ID $USER_ID, group ID $GROUP_ID)"
 docker run -it \
     --rm \
     -e DISPLAY=$DISPLAY \
+    -u $USER_ID:$GROUP_ID \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v $MOUNT_DIR:$HOME_DIR \
     $DOCKER_OPTIONS \
     $DOCKER_IMAGE
-    #-u $USER_ID:$GROUP_ID \
 
 [ -n "$CUSTOM_XAUTH" -a -e "${XAUTH_PATH}" ] && rm "${XAUTH_PATH}"
