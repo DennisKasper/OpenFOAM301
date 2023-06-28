@@ -1,5 +1,7 @@
 FROM ubuntu:14.04
 
+ENV LANG=C.UTF-8
+
 RUN : \
   && apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
